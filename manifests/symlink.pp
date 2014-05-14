@@ -29,7 +29,7 @@
 #
 # Copyright 2014 Pascal Immerzeel, unless otherwise noted.
 #
-define dotfiles::symlink {
+define dotfiles::symlink inherits dotfiles::params {
     $file = $title
     $repo_path = "${dotfiles::params::path}/dotfiles"
     $target_path = $dotfiles::params::path

@@ -1,5 +1,4 @@
-class dotfiles::config {
-
+class dotfiles::config inherits dotfiles {
 	# Files to create a symlink for.
 	$files = [
 		'gitignore',

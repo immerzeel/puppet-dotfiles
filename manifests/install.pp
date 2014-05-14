@@ -1,9 +1,6 @@
-class dotfiles::install {
-	
-	include dotfiles
-
+class dotfiles::install inherits dotfiles {
 	# Clone the remote dotfiles repo to the user home directory.
-	vcsrepo {'clone_dotfiles':
+	vcsrepo {"${path}/${repository_name}":
 		ensure   => present,
 		provider => git,
 		source   => $source,

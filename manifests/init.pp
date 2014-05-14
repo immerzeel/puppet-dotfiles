@@ -29,12 +29,10 @@
 #
 # Copyright 2014 Pascal Immerzeel, unless otherwise noted.
 #
-class dotfiles(
+class dotfiles (
 	$path   = $dotfiles::params::path,
 	$source = $dotfiles::params::source
-) {
-	include dotfiles::params
-
+) inherits dotfiles::params {
 	validate_string($path, $source)
 
 	anchor {'dotfiles::begin':} ->
