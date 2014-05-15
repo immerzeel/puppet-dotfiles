@@ -8,4 +8,6 @@ description 'Install dotfiles into user home and setup linking'
 project_page 'http://github.com/immerzeel/puppet-dotfiles'
 
 ## Add dependencies, if any:
-dependency 'puppetlabs/vcsrepo', '>= 1.2.0'
+dependency 'puppetlabs/apt', '>= 1.4.2'
+dependency 'puppetlabs/stdlib', '>= 3.2.1'
+dependency 'puppetlabs/vcsrepo', '>= 0.2.0'
