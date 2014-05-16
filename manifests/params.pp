@@ -1,5 +1,5 @@
 class dotfiles::params {
-	$source = 'git://git@github.com/immerzeel/dotfiles.git'
+	$source = 'git://github.com/immerzeel/dotfiles.git'
 
 	# On virtual machine, default to 'vagrant'.
 	if $::is_virtual {
