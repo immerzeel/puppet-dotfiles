@@ -3,7 +3,6 @@ class dotfiles::install inherits dotfiles {
 	vcsrepo {"${path}/${repository_name}":
 		ensure   => present,
 		provider => git,
-		source   => $source,
-		path     => $path
+		source   => $source
 	}
 }
