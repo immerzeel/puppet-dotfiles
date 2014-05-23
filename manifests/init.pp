@@ -31,8 +31,8 @@
 #
 class dotfiles (
 	$path   = $dotfiles::params::path,
-	$source = $dotfiles::params::source
-	$group  = $dotfiles::params::group
+	$source = $dotfiles::params::source,
+	$group  = $dotfiles::params::group,
 	$user   = $dotfiles::params::user
 ) inherits dotfiles::params {
 	validate_string($path, $source, $group, $user)
