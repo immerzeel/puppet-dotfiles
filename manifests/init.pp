@@ -32,8 +32,10 @@
 class dotfiles (
 	$path   = $dotfiles::params::path,
 	$source = $dotfiles::params::source
+	$group  = $dotfiles::params::group
+	$user   = $dotfiles::params::user
 ) inherits dotfiles::params {
-	validate_string($path, $source)
+	validate_string($path, $source, $group, $user)
 
 	anchor {'dotfiles::begin':} ->
 	class {'dotfiles::install':} ->

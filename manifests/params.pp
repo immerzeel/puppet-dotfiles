@@ -4,7 +4,8 @@ class dotfiles::params {
 
 	# On virtual machine, default to 'vagrant'.
 	if $::is_virtual {
-		$user   = 'vagrant'
+		$group  = 'vagrant'
 		$path   = '/home/vagrant'
+		$user   = 'vagrant'
 	}
 }

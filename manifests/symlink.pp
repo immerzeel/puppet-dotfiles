@@ -30,13 +30,15 @@
 # Copyright 2014 Pascal Immerzeel, unless otherwise noted.
 #
 define dotfiles::symlink {
-    $file = $title
-    $repo_path = "${dotfiles::params::path}/dotfiles"
+    $file        = $title
+    $repo_path   = "${dotfiles::params::path}/dotfiles"
     $target_path = $dotfiles::params::path
 
     # Create the symlink.
     file {"${repo_path}/${file}":
         ensure => link,
-        target => "${target_path}/.${file}"
+        group  => $dotfiles::params::group,
+        target => "${target_path}/.${file}",
+        owner  => $dotfiles::params::user
     }
 }
