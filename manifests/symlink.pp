@@ -31,11 +31,11 @@
 #
 define dotfiles::symlink {
     $file        = $title
-    $repo_path   = "${dotfiles::params::path}/dotfiles"
-    $target_path = $dotfiles::params::path
+    $link_path   = $dotfiles::params::path
+    $target_path = "${dotfiles::params::path}/dotfiles"
 
     # Create the symlink.
-    file {"${repo_path}/${file}":
+    file {"${link_path}/${file}":
         ensure => link,
         group  => $dotfiles::params::group,
         target => "${target_path}/.${file}",
