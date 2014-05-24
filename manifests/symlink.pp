@@ -35,10 +35,10 @@ define dotfiles::symlink {
     $target_path = "${dotfiles::params::path}/dotfiles"
 
     # Create the symlink.
-    file {"${link_path}/${file}":
+    file {"${link_path}/.${file}":
         ensure => link,
         group  => $dotfiles::params::group,
-        target => "${target_path}/.${file}",
+        target => "${target_path}/${file}",
         owner  => $dotfiles::params::user
     }
 }
